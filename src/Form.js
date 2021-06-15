@@ -3,7 +3,7 @@ import React, {Component} from 'react';
 class Form extends Component {
     constructor(props) {
         super(props);
-        
+
         this.initialState = {
             name: '',
             job: ''
@@ -22,29 +22,29 @@ class Form extends Component {
 
     onFormSubmit = (event) => {
         event.preventDefault();
-        
+
         this.props.handleSubmit(this.state);
         this.setState(this.initialState);
     }
 
     render() {
-        const { name, job } = this.state; 
+        const { name, job } = this.state;
 
         return (
             <form onSubmit={this.onFormSubmit}>
                 <label for="name">Name</label>
-                <input 
-                    type="text" 
-                    name="name" 
+                <input
+                    type="text"
+                    name="name"
                     id="name"
-                    value={name} 
+                    value={name}
                     onChange={this.handleChange} />
                 <label for="job">Job</label>
-                <input 
-                    type="text" 
-                    name="job" 
+                <input
+                    type="text"
+                    name="job"
                     id="job"
-                    value={job} 
+                    value={job}
                     onChange={this.handleChange} />
                 <button type="submit">
                     Submit
